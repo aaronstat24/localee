@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Localee — Discover Places Through Local Eyes</title>
+  <meta name="description" content="Localee — Connect with passionate local guides who reveal hidden gems, authentic food, and unforgettable experiences in their hometown.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fas fa-compass logo-icon"></i>
+        <span>Local<span class="logo-accent">ee</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#guides">Top Guides</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#become-guide" class="btn btn-outline btn-sm">Become a Guide</a>
+        <a href="#" class="btn btn-primary btn-sm">Explore Now</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-sky"></div>
+      <div class="hero-stars" id="heroParticles"></div>
+      <div class="hero-mountains">
+        <svg class="mountain-layer mountain-back" viewBox="0 0 1440 400" preserveAspectRatio="none">
+          <path d="M0,400 L0,280 Q120,140 240,220 Q360,90 480,180 Q560,60 720,150 Q840,30 960,160 Q1080,80 1200,200 Q1320,120 1440,240 L1440,400 Z" fill="rgba(30,60,80,0.6)"/>
+        </svg>
+        <svg class="mountain-layer mountain-mid" viewBox="0 0 1440 400" preserveAspectRatio="none">
+          <path d="M0,400 L0,300 Q100,200 200,260 Q340,140 480,230 Q580,120 720,210 Q860,100 1000,220 Q1100,160 1200,250 Q1340,180 1440,280 L1440,400 Z" fill="rgba(20,70,50,0.5)"/>
+        </svg>
+        <svg class="mountain-layer mountain-front" viewBox="0 0 1440 400" preserveAspectRatio="none">
+          <path d="M0,400 L0,330 Q160,260 320,310 Q480,240 640,300 Q800,230 960,290 Q1120,250 1280,320 Q1380,290 1440,340 L1440,400 Z" fill="rgba(15,80,45,0.45)"/>
+        </svg>
+      </div>
+      <div class="hero-sea">
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+          <path d="M0,60 Q180,20 360,50 Q540,80 720,40 Q900,10 1080,50 Q1260,80 1440,30 L1440,200 L0,200 Z" fill="rgba(15,90,130,0.35)"/>
+          <path d="M0,90 Q180,60 360,80 Q540,100 720,70 Q900,50 1080,80 Q1260,100 1440,60 L1440,200 L0,200 Z" fill="rgba(10,70,110,0.3)"/>
+        </svg>
+      </div>
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-sparkles"></i>
+        <span>Trusted by 50,000+ Travellers Worldwide</span>
+      </div>
+      <h1 class="hero-title">
+        Discover Places Through<br>
+        <span class="gradient-text">Local Eyes</span>
+      </h1>
+      <p class="hero-subtitle">
+        Connect with passionate locals who know every hidden alley, secret food spot,
+        and untold story of their hometown. Experience travel the way it's meant to be.
+      </p>
+      <div class="hero-search">
+        <div class="search-box">
+          <div class="search-field">
+            <i class="fas fa-location-dot"></i>
+            <input type="text" placeholder="Where do you want to explore?">
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-field">
+            <i class="fas fa-calendar"></i>
+            <input type="text" placeholder="When?">
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-field">
+            <i class="fas fa-users"></i>
+            <input type="text" placeholder="Guests">
+          </div>
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+          </button>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-count="2500">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Local Guides</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-count="180">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Cities</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-count="50000">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Happy Travellers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-count="4.9">0</span>
+          <span class="stat-label">Avg Rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By -->
+  <section class="trusted-bar">
+    <div class="container">
+      <p class="trusted-label">Featured In</p>
+      <div class="trusted-logos">
+        <span class="trusted-logo">TravelWeekly</span>
+        <span class="trusted-logo">LonelyPlanet</span>
+        <span class="trusted-logo">NatGeo</span>
+        <span class="trusted-logo">Forbes</span>
+        <span class="trusted-logo">TripAdvisor</span>
+        <span class="trusted-logo">Condé Nast</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple & Seamless</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-desc">Three simple steps to your most authentic travel experience ever</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card" data-aos="fade-up">
+          <div class="step-number">01</div>
+          <div class="step-icon-wrap">
+            <div class="step-icon">
+              <i class="fas fa-map-location-dot"></i>
+            </div>
+          </div>
+          <h3>Choose Your Destination</h3>
+          <p>Browse through 180+ cities and discover unique experiences curated by locals who live and breathe their hometown.</p>
+        </div>
+        <div class="step-connector">
+          <svg viewBox="0 0 100 20"><path d="M0,10 Q50,0 100,10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6,4"/></svg>
+        </div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-number">02</div>
+          <div class="step-icon-wrap">
+            <div class="step-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+          </div>
+          <h3>Pick Your Guide</h3>
+          <p>Browse verified local guides, read authentic reviews, check their specialties, and find someone who matches your vibe.</p>
+        </div>
+        <div class="step-connector">
+          <svg viewBox="0 0 100 20"><path d="M0,10 Q50,20 100,10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6,4"/></svg>
+        </div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="step-number">03</div>
+          <div class="step-icon-wrap">
+            <div class="step-icon">
+              <i class="fas fa-route"></i>
+            </div>
+          </div>
+          <h3>Live the Experience</h3>
+          <p>Meet your guide, explore hidden gems, taste incredible local food, and create memories that last a lifetime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Categories -->
+  <section class="section experiences" id="experiences">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Curated For You</span>
+        <h2 class="section-title">Unforgettable Experiences</h2>
+        <p class="section-desc">From secret food trails to unexplored nature spots — find what excites you</p>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-card exp-card-large" data-aos="fade-right">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80" alt="Food Tours" loading="lazy">
+          <div class="exp-overlay">
+            <div class="exp-tag">Most Popular</div>
+            <h3>Street Food Trails</h3>
+            <p>Taste authentic local flavors at spots only locals know about</p>
+            <span class="exp-count"><i class="fas fa-map-pin"></i> 450+ experiences</span>
+          </div>
+        </div>
+        <div class="exp-card" data-aos="fade-left" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=600&q=80" alt="Hidden Gems" loading="lazy">
+          <div class="exp-overlay">
+            <h3>Hidden Gems</h3>
+            <p>Discover secret spots off the tourist map</p>
+            <span class="exp-count"><i class="fas fa-map-pin"></i> 320+ experiences</span>
+          </div>
+        </div>
+        <div class="exp-card" data-aos="fade-left" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600&q=80" alt="Cultural Walks" loading="lazy">
+          <div class="exp-overlay">
+            <h3>Cultural Immersions</h3>
+            <p>Dive deep into local traditions and heritage</p>
+            <span class="exp-count"><i class="fas fa-map-pin"></i> 280+ experiences</span>
+          </div>
+        </div>
+        <div class="exp-card" data-aos="fade-right" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="Adventure" loading="lazy">
+          <div class="exp-overlay">
+            <h3>Adventure & Treks</h3>
+            <p>Local trails and adrenaline-pumping experiences</p>
+            <span class="exp-count"><i class="fas fa-map-pin"></i> 190+ experiences</span>
+          </div>
+        </div>
+        <div class="exp-card exp-card-large" data-aos="fade-left">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Sunset Spots" loading="lazy">
+          <div class="exp-overlay">
+            <div class="exp-tag">Trending</div>
+            <h3>Sunset & Photography</h3>
+            <p>Capture breathtaking views at spots only locals know</p>
+            <span class="exp-count"><i class="fas fa-map-pin"></i> 210+ experiences</span>
+          </div>
+        </div>
+        <div class="exp-card" data-aos="fade-right" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80" alt="Nightlife" loading="lazy">
+          <div class="exp-overlay">
+            <h3>Nightlife & Social</h3>
+            <p>Experience the city after dark like a local</p>
+            <span class="exp-count"><i class="fas fa-map-pin"></i> 150+ experiences</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Guides -->
+  <section class="section guides" id="guides">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Meet The Locals</span>
+        <h2 class="section-title">Top-Rated Guides</h2>
+        <p class="section-desc">Passionate locals who turn ordinary trips into extraordinary stories</p>
+      </div>
+      <div class="guides-carousel" id="guidesCarousel">
+        <div class="guide-card" data-aos="zoom-in">
+          <div class="guide-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Arjun" loading="lazy">
+            <div class="guide-badge"><i class="fas fa-crown"></i> Superguide</div>
+          </div>
+          <div class="guide-info">
+            <h4>Arjun Mehta</h4>
+            <p class="guide-location"><i class="fas fa-location-dot"></i> Jaipur, Rajasthan</p>
+            <div class="guide-rating">
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <span>4.98 (342 reviews)</span>
+            </div>
+            <div class="guide-tags">
+              <span>Heritage Walks</span>
+              <span>Food Tours</span>
+              <span>Photography</span>
+            </div>
+            <p class="guide-quote">"I'll show you the Jaipur that even most locals haven't seen."</p>
+            <div class="guide-footer">
+              <span class="guide-price">From <strong>$25</strong>/person</span>
+              <a href="#" class="btn btn-primary btn-sm">View Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="guide-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="guide-img">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Priya" loading="lazy">
+            <div class="guide-badge"><i class="fas fa-crown"></i> Superguide</div>
+          </div>
+          <div class="guide-info">
+            <h4>Priya Sharma</h4>
+            <p class="guide-location"><i class="fas fa-location-dot"></i> Varanasi, UP</p>
+            <div class="guide-rating">
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <span>4.96 (289 reviews)</span>
+            </div>
+            <div class="guide-tags">
+              <span>Spiritual Tours</span>
+              <span>River Walks</span>
+              <span>Street Food</span>
+            </div>
+            <p class="guide-quote">"The ghats have stories that no guidebook will ever tell you."</p>
+            <div class="guide-footer">
+              <span class="guide-price">From <strong>$20</strong>/person</span>
+              <a href="#" class="btn btn-primary btn-sm">View Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="guide-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="guide-img">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" alt="Marco" loading="lazy">
+            <div class="guide-badge"><i class="fas fa-fire"></i> Rising Star</div>
+          </div>
+          <div class="guide-info">
+            <h4>Marco Rivera</h4>
+            <p class="guide-location"><i class="fas fa-location-dot"></i> Lisbon, Portugal</p>
+            <div class="guide-rating">
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+              <span>4.89 (178 reviews)</span>
+            </div>
+            <div class="guide-tags">
+              <span>Hidden Alleys</span>
+              <span>Fado Music</span>
+              <span>Nightlife</span>
+            </div>
+            <p class="guide-quote">"Lisbon's soul is in its side streets. Let me take you there."</p>
+            <div class="guide-footer">
+              <span class="guide-price">From <strong>$30</strong>/person</span>
+              <a href="#" class="btn btn-primary btn-sm">View Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="guide-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="guide-img">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Yuki" loading="lazy">
+            <div class="guide-badge"><i class="fas fa-crown"></i> Superguide</div>
+          </div>
+          <div class="guide-info">
+            <h4>Yuki Tanaka</h4>
+            <p class="guide-location"><i class="fas fa-location-dot"></i> Kyoto, Japan</p>
+            <div class="guide-rating">
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <span>5.0 (412 reviews)</span>
+            </div>
+            <div class="guide-tags">
+              <span>Tea Ceremonies</span>
+              <span>Temples</span>
+              <span>Zen Gardens</span>
+            </div>
+            <p class="guide-quote">"I'll show you the Kyoto that tourists walk right past."</p>
+            <div class="guide-footer">
+              <span class="guide-price">From <strong>$35</strong>/person</span>
+              <a href="#" class="btn btn-primary btn-sm">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section class="section destinations" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Explore The World</span>
+        <h2 class="section-title">Trending Destinations</h2>
+        <p class="section-desc">Places where our guides are creating the most unforgettable experiences</p>
+      </div>
+      <div class="dest-grid">
+        <div class="dest-card dest-featured" data-aos="fade-up">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80" alt="India" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-country">India</span>
+            <h3>Rajasthan</h3>
+            <div class="dest-meta">
+              <span><i class="fas fa-user-group"></i> 85 guides</span>
+              <span><i class="fas fa-star"></i> 4.9</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" alt="London" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-country">UK</span>
+            <h3>London</h3>
+            <div class="dest-meta">
+              <span><i class="fas fa-user-group"></i> 62 guides</span>
+              <span><i class="fas fa-star"></i> 4.8</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="Tokyo" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-country">Japan</span>
+            <h3>Tokyo</h3>
+            <div class="dest-meta">
+              <span><i class="fas fa-user-group"></i> 74 guides</span>
+              <span><i class="fas fa-star"></i> 4.95</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Paris" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-country">France</span>
+            <h3>Paris</h3>
+            <div class="dest-meta">
+              <span><i class="fas fa-user-group"></i> 91 guides</span>
+              <span><i class="fas fa-star"></i> 4.85</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80" alt="Rome" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-country">Italy</span>
+            <h3>Rome</h3>
+            <div class="dest-meta">
+              <span><i class="fas fa-user-group"></i> 58 guides</span>
+              <span><i class="fas fa-star"></i> 4.88</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80" alt="Bali" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-country">Indonesia</span>
+            <h3>Bali</h3>
+            <div class="dest-meta">
+              <span><i class="fas fa-user-group"></i> 45 guides</span>
+              <span><i class="fas fa-star"></i> 4.92</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Real Stories</span>
+        <h2 class="section-title">What Travellers Say</h2>
+        <p class="section-desc">Thousands of unforgettable experiences, told by the people who lived them</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Arjun took us to this tiny street in Jaipur where we had the best dal baati churma of our lives. No guidebook could have led us there. This is the future of travel."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="David" loading="lazy">
+            <div>
+              <strong>David Chen</strong>
+              <span>San Francisco, USA</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-featured" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Priya showed us a side of Varanasi that made us cry, laugh, and feel deeply connected to a place we'd never been before. The sunrise boat ride she arranged was pure magic. I've traveled to 40 countries but this was the most authentic experience I've ever had."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80" alt="Emma" loading="lazy">
+            <div>
+              <strong>Emma Johansson</strong>
+              <span>Stockholm, Sweden</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Marco made Lisbon feel like home. We spent an entire evening in a tiny fado bar with locals, drinking wine and singing. You can't buy that experience anywhere."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="James" loading="lazy">
+            <div>
+              <strong>James O'Brien</strong>
+              <span>Dublin, Ireland</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Become a Guide CTA -->
+  <section class="section become-guide" id="become-guide">
+    <div class="container">
+      <div class="cta-card" data-aos="zoom-in">
+        <div class="cta-content">
+          <span class="section-tag section-tag-light">For Locals</span>
+          <h2>Know Your City Like No One Else?</h2>
+          <p>Turn your local knowledge into income. Share your passion for your hometown with travellers from around the world. Set your own schedule, choose your experiences, and earn doing what you love.</p>
+          <div class="cta-features">
+            <div class="cta-feature">
+              <i class="fas fa-circle-check"></i>
+              <span>Flexible schedule</span>
+            </div>
+            <div class="cta-feature">
+              <i class="fas fa-circle-check"></i>
+              <span>Earn up to $200/day</span>
+            </div>
+            <div class="cta-feature">
+              <i class="fas fa-circle-check"></i>
+              <span>Free to join</span>
+            </div>
+            <div class="cta-feature">
+              <i class="fas fa-circle-check"></i>
+              <span>Insurance covered</span>
+            </div>
+          </div>
+          <div class="cta-actions">
+            <a href="#" class="btn btn-white btn-lg">Start Guiding Today</a>
+            <a href="#" class="btn btn-ghost btn-lg">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="cta-visual">
+          <div class="cta-earning-card">
+            <div class="earning-header">
+              <i class="fas fa-wallet"></i>
+              <span>This Month's Earnings</span>
+            </div>
+            <div class="earning-amount">$3,240</div>
+            <div class="earning-bar">
+              <div class="earning-fill" style="width: 78%"></div>
+            </div>
+            <div class="earning-details">
+              <span>32 tours completed</span>
+              <span>78% of goal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Download -->
+  <section class="section app-section">
+    <div class="container">
+      <div class="app-content" data-aos="fade-up">
+        <div class="app-text">
+          <span class="section-tag">Coming Soon</span>
+          <h2 class="section-title">Your Next Adventure,<br>Right in Your Pocket</h2>
+          <p>Book guides, chat in real-time, get location-based suggestions, and manage your trips on the go. Available soon on iOS and Android.</p>
+          <div class="app-buttons">
+            <a href="#" class="app-store-btn">
+              <i class="fab fa-apple"></i>
+              <div>
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="#" class="app-store-btn">
+              <i class="fab fa-google-play"></i>
+              <div>
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+          <div class="app-notify">
+            <input type="email" placeholder="Enter your email for early access">
+            <button class="btn btn-primary">Notify Me</button>
+          </div>
+        </div>
+        <div class="app-mockup">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="phone-header">
+                <i class="fas fa-compass"></i>
+                <span>Localee</span>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-img"></div>
+                <div class="phone-card-text">
+                  <strong>Hidden Temple Trail</strong>
+                  <span>Kyoto, Japan</span>
+                  <div class="phone-card-rating"><i class="fas fa-star"></i> 4.98</div>
+                </div>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-img phone-card-img-2"></div>
+                <div class="phone-card-text">
+                  <strong>Street Food Safari</strong>
+                  <span>Bangkok, Thailand</span>
+                  <div class="phone-card-rating"><i class="fas fa-star"></i> 4.95</div>
+                </div>
+              </div>
+              <div class="phone-nav">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <i class="fas fa-compass logo-icon"></i>
+            <span>Local<span class="logo-accent">ee</span></span>
+          </a>
+          <p>Connecting travellers with passionate locals for authentic, unforgettable experiences around the world.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>For Travellers</h4>
+            <a href="#">Find a Guide</a>
+            <a href="#">Browse Experiences</a>
+            <a href="#">Destinations</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Travel Insurance</a>
+          </div>
+          <div class="footer-col">
+            <h4>For Guides</h4>
+            <a href="#">Become a Guide</a>
+            <a href="#">Guide Resources</a>
+            <a href="#">Community Forum</a>
+            <a href="#">Success Stories</a>
+            <a href="#">Pricing</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Press</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Safety</a>
+            <a href="#">Cancellation Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Localee. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
