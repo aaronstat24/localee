@@ -22,21 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Hero particles ---
-  const particlesContainer = document.getElementById('heroParticles');
-  if (particlesContainer) {
-    for (let i = 0; i < 40; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      p.style.left = Math.random() * 100 + '%';
-      p.style.animationDuration = (4 + Math.random() * 8) + 's';
-      p.style.animationDelay = Math.random() * 6 + 's';
-      p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
-      p.style.opacity = 0.1 + Math.random() * 0.4;
-      particlesContainer.appendChild(p);
-    }
-  }
-
   // --- Scroll-triggered animations (lightweight AOS replacement) ---
   const animateElements = document.querySelectorAll('[data-aos]');
   const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
