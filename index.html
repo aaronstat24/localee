@@ -415,6 +415,65 @@
     </div>
   </section>
 
+  <!-- Translator -->
+  <section class="section translator" id="translator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Speak & Translate</span>
+        <h2 class="section-title">Translator (Text + Voice)</h2>
+        <p class="section-desc">Type or speak in one language and hear it read aloud in another.</p>
+      </div>
+      <div class="translator-grid">
+        <div class="translator-card" data-aos="fade-up">
+          <div class="translator-header">
+            <h3>Input</h3>
+            <div class="translator-actions">
+              <button class="btn btn-outline btn-sm" id="startSpeech" type="button">
+                <i class="fas fa-microphone"></i>
+                <span>Speak</span>
+              </button>
+              <button class="btn btn-outline btn-sm" id="clearInput" type="button">
+                <i class="fas fa-trash"></i>
+                <span>Clear</span>
+              </button>
+            </div>
+          </div>
+          <div class="translator-controls">
+            <label>
+              From
+              <select id="sourceLang"></select>
+            </label>
+            <label>
+              To
+              <select id="targetLang"></select>
+            </label>
+          </div>
+          <textarea id="sourceText" placeholder="Type or speak something..." rows="6"></textarea>
+        </div>
+
+        <div class="translator-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="translator-header">
+            <h3>Output</h3>
+            <div class="translator-actions">
+              <button class="btn btn-outline btn-sm" id="playOutput" type="button">
+                <i class="fas fa-volume-up"></i>
+                <span>Listen</span>
+              </button>
+              <button class="btn btn-outline btn-sm" id="copyOutput" type="button">
+                <i class="fas fa-copy"></i>
+                <span>Copy</span>
+              </button>
+            </div>
+          </div>
+          <textarea id="targetText" placeholder="Translation will appear here" rows="6" readonly></textarea>
+          <div class="translator-footer">
+            <button class="btn btn-primary btn-lg" id="translateBtn" type="button">Translate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Honnavar Detail Slide -->
   <div class="slide-panel" id="honnavarSlide" aria-hidden="true">
     <div class="slide-panel__backdrop" id="honnavarBackdrop" tabindex="-1"></div>
@@ -677,6 +736,7 @@
             <a href="#">Find a Guide</a>
             <a href="#">Browse Experiences</a>
             <a href="#">Destinations</a>
+            <a href="#translator" id="openTranslator">Translator</a>
             <a href="#">Gift Cards</a>
             <a href="#">Travel Insurance</a>
           </div>
