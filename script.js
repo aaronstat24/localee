@@ -40,42 +40,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animateElements.forEach(el => observer.observe(el));
 
-  // --- Counter animation ---
-  const counters = document.querySelectorAll('.stat-number[data-count]');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseFloat(el.getAttribute('data-count'));
-        const isDecimal = target % 1 !== 0;
-        const duration = 2000;
-        const startTime = performance.now();
+  // --- Counter animation --- (removed as per user request)
+  // const counters = document.querySelectorAll('.stat-number[data-count]');
+  // const counterObserver = new IntersectionObserver((entries) => {
+  //   entries.forEach(entry => {
+  //     if (entry.isIntersecting) {
+  //       const el = entry.target;
+  //       const target = parseFloat(el.getAttribute('data-count'));
+  //       const isDecimal = target % 1 !== 0;
+  //       const duration = 2000;
+  //       const startTime = performance.now();
 
-        const animate = (currentTime) => {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
-          const current = eased * target;
+  //       const animate = (currentTime) => {
+  //         const elapsed = currentTime - startTime;
+  //         const progress = Math.min(elapsed / duration, 1);
+  //         const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
+  //         const current = eased * target;
 
-          if (isDecimal) {
-            el.textContent = current.toFixed(1);
-          } else if (target >= 1000) {
-            el.textContent = Math.floor(current).toLocaleString();
-          } else {
-            el.textContent = Math.floor(current);
-          }
+  //         if (isDecimal) {
+  //           el.textContent = current.toFixed(1);
+  //         } else if (target >= 1000) {
+  //           el.textContent = Math.floor(current).toLocaleString();
+  //         } else {
+  //           el.textContent = Math.floor(current);
+  //         }
 
-          if (progress < 1) {
-            requestAnimationFrame(animate);
-          }
-        };
-        requestAnimationFrame(animate);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
+  //         if (progress < 1) {
+  //           requestAnimationFrame(animate);
+  //         }
+  //       };
+  //       requestAnimationFrame(animate);
+  //       counterObserver.unobserve(el);
+  //     }
+  //   });
+  // }, { threshold: 0.5 });
 
-  counters.forEach(c => counterObserver.observe(c));
+  // counters.forEach(c => counterObserver.observe(c));
 
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
