@@ -945,6 +945,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
   overflow-y: auto;
   transform: translateX(115%);
   transition: transform var(--transition);
+  z-index: 1;
 }
 
 .slide-panel.open .slide-panel__content {
