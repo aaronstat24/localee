@@ -154,4 +154,170 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // --- Translator (text + voice) ---
+  const langOptions = [
+    { code: 'en', label: 'English' },
+    { code: 'hi', label: 'Hindi' },
+    { code: 'mr', label: 'Marathi' },
+    { code: 'kn', label: 'Kannada' },
+    { code: 'ta', label: 'Tamil' },
+    { code: 'te', label: 'Telugu' },
+    { code: 'fr', label: 'French' },
+    { code: 'es', label: 'Spanish' },
+    { code: 'de', label: 'German' },
+    { code: 'pt', label: 'Portuguese' },
+    { code: 'it', label: 'Italian' }
+  ];
+
+  const sourceLang = document.getElementById('sourceLang');
+  const targetLang = document.getElementById('targetLang');
+  const sourceText = document.getElementById('sourceText');
+  const targetText = document.getElementById('targetText');
+  const translateBtn = document.getElementById('translateBtn');
+  const startSpeech = document.getElementById('startSpeech');
+  const playOutput = document.getElementById('playOutput');
+  const copyOutput = document.getElementById('copyOutput');
+  const clearInput = document.getElementById('clearInput');
+
+  const fillLanguageSelects = () => {
+    if (!sourceLang || !targetLang) return;
+    langOptions.forEach(lang => {
+      const opt1 = document.createElement('option');
+      opt1.value = lang.code;
+      opt1.textContent = lang.label;
+      sourceLang.appendChild(opt1);
+
+      const opt2 = document.createElement('option');
+      opt2.value = lang.code;
+      opt2.textContent = lang.label;
+      targetLang.appendChild(opt2);
+    });
+
+    sourceLang.value = 'en';
+    targetLang.value = 'hi';
+  };
+
+  const setStatus = (message) => {
+    if (!translateBtn) return;
+    translateBtn.textContent = message;
+  };
+
+  const translateText = async () => {
+    if (!sourceText || !targetText) return;
+    const text = sourceText.value.trim();
+    if (!text) return;
+
+    const source = sourceLang?.value || 'en';
+    const target = targetLang?.value || 'hi';
+
+    setStatus('Translating...');
+
+    try {
+      const response = await fetch('https://libretranslate.de/translate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          q: text,
+          source,
+          target,
+          format: 'text'
+        })
+      });
+
+      const data = await response.json();
+      if (data && data.translatedText) {
+        targetText.value = data.translatedText;
+      } else {
+        targetText.value = 'Translation failed. Please try again.';
+      }
+    } catch (error) {
+      targetText.value = 'Translation error. Check your network and try again.';
+    } finally {
+      setStatus('Translate');
+    }
+  };
+
+  const speakText = (text, lang) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+
+    const voices = window.speechSynthesis.getVoices();
+    const matching = voices.find(v => v.lang.toLowerCase().startsWith(lang.toLowerCase()));
+    if (matching) utterance.voice = matching;
+
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const startVoiceInput = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert('Speech recognition is not supported in this browser.');
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = sourceLang?.value || 'en';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      if (sourceText) sourceText.value = transcript;
+    };
+
+    recognition.onerror = () => {
+      // ignore errors silently
+    };
+
+    recognition.start();
+  };
+
+  const copyToClipboard = async () => {
+    if (!targetText) return;
+    try {
+      await navigator.clipboard.writeText(targetText.value);
+    } catch (err) {
+      // fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = targetText.value;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+  };
+
+  fillLanguageSelects();
+
+  translateBtn?.addEventListener('click', translateText);
+  startSpeech?.addEventListener('click', startVoiceInput);
+  playOutput?.addEventListener('click', () => {
+    if (!targetText) return;
+    speakText(targetText.value, targetLang?.value || 'ta');
+  });
+  copyOutput?.addEventListener('click', copyToClipboard);
+  clearInput?.addEventListener('click', () => {
+    if (sourceText) sourceText.value = '';
+    if (targetText) targetText.value = '';
+  });
+
+  const openTranslatorLink = document.getElementById('openTranslator');
+  const translatorSection = document.getElementById('translator');
+
+  const openTranslator = () => {
+    if (!translatorSection) return;
+    sourceLang.value = 'en';
+    targetLang.value = 'ta';
+    if (sourceText) sourceText.focus();
+    translatorSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  openTranslatorLink?.addEventListener('click', (event) => {
+    event.preventDefault();
+    openTranslator();
+  });
 });
