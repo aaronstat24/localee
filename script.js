@@ -321,8 +321,8 @@ document.addEventListener('DOMContentLoaded', () => {
     openTranslator();
   });
 
-  // --- Localee guide profile (Vichu) ---
-  const openLocaleeBtn = document.getElementById('openLocaleeBtn');
+  // --- Gonatho guide profile (Vichu) ---
+  const openGonathoBtn = document.getElementById('openGonathoBtn');
   const guideSlide = document.getElementById('guideSlide');
   const guideBackdrop = document.getElementById('guideBackdrop');
   const guideClose = document.getElementById('guideClose');
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   };
 
-  openLocaleeBtn?.addEventListener('click', () => {
+  openGonathoBtn?.addEventListener('click', () => {
     closeHonnavarSlide();
     openGuideSlide();
   });
